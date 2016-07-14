@@ -6,41 +6,23 @@
     </div>
       </div>
     </div>
+    
+  <div class="container">
+    <ul ng-repeat="category in categories">
+      <li>{{category.name}}</li>
+    </ul>
+  </div>
 
   <div class="container">
     <div class="section">
       <h4 class="black-text">Featured Technologies</h4>
       <!--   Icon Section   -->
       <div class="row">
-        <div class="box col s4 m3">
+        <div class="box col s4 m3" ng-repeat="category in categories">
           <div class="icon-block">
-            <h2 class="title overtext">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Crops</h2>
-            <a href="./directories/main/version2.html">
-              <img src="./../images/abaca.png" alt="Abaca" class="hov" width="297px" height="300px">
-            </a>
-          </div>
-        </div>
-        <div class="box col s4 m3">
-          <div class="icon-block">
-            <h2 class="title overtext">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Aquatic</h2>
-            <a href="./directories/main/view-aquatic.html">
-              <img src="./../images/aquatic.png" alt="Aquatic" class="hov" width="297px" height="300px">
-            </a>
-          </div>
-        </div>
-        <div class="box col s4 m3">
-          <div class="icon-block">
-            <h2 class="title overtext">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Livestock</h2>
-            <a href="./directories/main/view-livestock.html">
-              <img src="./../images/livestock.png" alt="Livestock" class="hov" width="297px" height="300px">
-            </a>
-          </div>
-        </div>
-         <div class="box col s4 m3">
-          <div class="icon-block">
-            <div><h2 class="title overtext">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Forest</h2></div>
-            <a href="./directories/main/view-forest.html">
-              <img src="./../images/bamboo.png" alt="Forest" class="hov" width="297px" height="300px">
+            <h2 class="title overtext">{{ category.name }}</h2>
+            <a href="#/technologies">
+              <img ng-src="{{ category.thumbnail }}" alt="{{ category.name }}" class="hov" width="297px" height="300px">
             </a>
           </div>
         </div>
@@ -100,5 +82,5 @@
           </div>
         </div>
       </div>
-      </div>
-      </div>
+    </div>
+  </div>
