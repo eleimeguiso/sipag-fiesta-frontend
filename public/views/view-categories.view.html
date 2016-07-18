@@ -1,13 +1,21 @@
-<h2>VIEW ALL CATEGORIES</h2>
-<ul ng-repeat="category in categories" ng-model="cat" ng-init="cat = category.name">
-  <li>
-    <a href="/#/{{category.name}}/commodities"><h4>{{category.name}}</h4></a><hr/>
-    <!-- <img ng-src="{{category.thumbnail}}" alt="{{category.name}}"> -->
-    <ul ng-repeat="commodity in commodities | filter: cat">
-      <li>
-        <a href="/#/commodity/{{commodity.name}}/technologies"><h6>{{commodity.name}}</h6></a>  
-      </li>
-    </ul>
-    <hr/>
-  </li>
-</ul>
+<!-- Banner -->
+<div id="index-banner" class="parallax-container" >
+  <div class="parallax">
+    <img src="./../images/corn-banner.jpg" alt="PCAARRD-KMS">
+  </div>
+</div> 
+
+<div class="container">
+  <br><br>
+  <div class="row center" >
+    <div class="col s12 m3" ng-repeat="category in categories" ng-model="cat" ng-init="cat = category.name">
+      <img ng-src="{{category.thumbnail}}" width="100"><br>
+      <a href="/#/{{category.name}}/commodities"><h3>{{category.name}}</h3></a><br>
+      <div class="collection" ng-repeat="commodity in commodities | filter: cat">
+        <a href="/#/commodity/{{commodity.name}}/technologies" class="collection-item">{{commodity.name}}</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+

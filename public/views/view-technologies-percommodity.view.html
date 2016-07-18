@@ -1,8 +1,14 @@
-<h2>VIEW TECHNOLOGIES in {{currentCommodity}}</h2>
-<ul ng-repeat="technology in technologiesPerCommodity">
-  <li>
-    <a href="/#/technologies/{{technology.technology_id}}"><h4>{{technology.title}}</h4></a><hr/>
-    
-
-  </li>
-</ul>
+<div class="container">
+  <br><br>
+  <h3>{{currentCommodity}}</h3>
+  <div class="row center" >
+    <ul ng-repeat="technology in technologiesPerCommodity">
+      <li>
+        <a href="/#/technologies/{{technology.technology_id}}">
+          <h5>{{technology.title}}</h5>
+        </a>
+        <hr/>
+      </li>
+    </ul> 
+  </div>
+</div>
