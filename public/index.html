@@ -3,31 +3,54 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
-  <title>SIPAG ni Juan</title>
+  <title>PCAARRD-KMS</title>
 
   <!-- CSS  -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="assets/resources/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link href="assets/resources/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-</head>
-<body ng-app="app">
-  <nav class="white" role="navigation">
-      <div class="nav-wrapper container">
-        <a id="logo-container" href="#/home" class="brand-logo"><img src="./../images/sipaglogo.jpg" height="60" /></a>
-      <a href="#/home"><span class="navbar-brand black-text" style="line-height: 25px; font-size: 20px; float: left; padding-left: 120px; padding-top: 5px;">DOST-PCAARRD<br>Strategic Industry S&T Program For Agri-Aqua Growth</span></a>
-      <ul class="right hide-on-med-and-down">
-        <li><a href="#!">About</a></li>
-        <li><a href="#!">Contact Us</a></li>
-        </ul>
+  <link href="/bower_components/angular-material/angular-material.min.css" rel="stylesheet" media="screen,projection" />
+  <link href="bower_components/Materialize/dist/css/materialize.css" rel="stylesheet" media="screen,projection" />
+  <link href="bower_components/Materialize/dist/css/customize.css" rel="stylesheet" media="screen,projection" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
 
+</head>
+
+
+
+<body ng-app="app">
+  
+  <!-- Nav Bar -->
+  <nav class="white" role="navigation">
+    <div class="nav-wrapper container">
+      <!-- Logo -->
+      <a id="logo-container" href="#/home" class="brand-logo">
+        <img src="./../images/pcaarrd-logo.png" height="60" />
+          <!-- <span class="navbar-brand black-text" style="line-height: 25px; font-size: 20px; float: left; padding-left: 120px; padding-top: 5px;">DOST-PCAARRD<br>Strategic Industry S&T Program For Agri-Aqua Growth</span> -->
+      </a>
+
+      <!-- Nav Options -->
+      <ul class="right hide-on-med-and-down">
+        <li>
+          <a href="#!">About</a>
+        </li>
+        <li>
+          <a href="#!">Contact Us</a>
+        </li>
+      </ul>
+
+      <!-- Side Nav Options -->
       <ul id="nav-mobile" class="side-nav">
-        <li><a href="#!">About</a></li>
-        <li><a href="#!">Contact Us</a></li>
-        </ul>
-        <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+        <li>
+          <a href="#!">About</a>
+        </li>
+        <li>
+          <a href="#!">Contact Us</a>
+        </li>
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+
     </div>
   </nav>
   
+  <!-- Secondary Nav Bar -->
   <div id="index-banner">
     <div class="container">
         <div class="row" style="padding-top:5px;">
@@ -35,22 +58,25 @@
           <table>
             <thead>
               <tr>
-                <th><a href="#/home"><img src="./../images/home.png" height="30" ></a></th>
-                <th><a href="#/technologies">CROPS</a></th>
-                <th><a href="./directories/main/view-aquatic.html">AQUATIC</a></th>
-                <th><a href="./directories/main/view-livestock.html">LIVESTOCK</a></th>
-                <th><a href="./directories/main/view-forest.html">FOREST AND ENVIRONMENT</a></th>
+                <!-- <th><a href="#/home"><img src="./../images/home.png" height="30" ></a></th> -->
+                <th><a href="#/home"><i class="material-icons">home</i></a></th>
+                <th><a href="#/categories">TECHNOLOGY</a></th>
+                <th><a href="#!">EVENTS</a></th>
+                <th><a href="#!">COMMUNITY</a></th>
+                <th><a href="#!">OTHER</a></th>
               </tr>
             </thead>
           </table>
         </div>        
       </div>
 
+      <!-- Search Bar -->
       <div class="nav-wrapper">
         <form>
           <div class="input-field">
-            <input id="search" type="search" required>
-            <label for="search"><i class="material-icons">search</i>  Search keywords</label>
+            <!-- <i class="material-icons">search</i> -->
+            <input id="search" type="search" placeholder="Search PCAARRD" required>
+            <!-- <label for="search"><i class="material-icons">search</i>  Search keywords</label> -->
             <i class="material-icons">close</i>
           </div>
         </form>
@@ -58,27 +84,22 @@
     </div>
   </div>
 
-  <p ng-view="">
-
-  </p>
 
 
+  <div ng-view=""></div>
+
+
+  <!-- Footer -->
   <footer class="page-footer grey darken-4 foot-text">
-    <div class="container">
+    <div class="container footer">
       <div class="row">
         <div class="col l6 s12">
           <h5 class="white-text foot-text-title">About SIPAG ni Juan</h5>
-          <p class="grey-text text-lighten-4">Strategic Industry S&T Program for Agri-Aqua Growth (SIPAG) bolsters
-PCAARRD’s commitment to DOST Outcome One, which the Council pursues
-through its Industry Strategic S&T Program (ISP). SIPAG embodies not only the
-values of hard work to bring out the best in agriculture and aquatic research
-and development (R&D) but also the benefits that these efforts will bring to
-every Filipino, hence PCAARRD’s SIPAG ni Juan.
-This publication is a compilation of the technologies in the DOST-PCAARRD
-Innovation and Technology Center.</p>
+          <p class="grey-text text-lighten-4">
+          Strategic Industry S&T Program for Agri-Aqua Growth (SIPAG) bolsters PCAARRD’s commitment to DOST Outcome One, which the Council pursues through its Industry Strategic S&T Program (ISP). SIPAG embodies not only the values of hard work to bring out the best in agriculture and aquatic research and development (R&D) but also the benefits that these efforts will bring to every Filipino, hence PCAARRD’s SIPAG ni Juan. This publication is a compilation of the technologies in the DOST-PCAARRD Innovation and Technology Center.</p>
         </div>
 
-        <div class="col l3 s12">
+        <div class="col l4 s12 left-align">
           <h5 class="white-text foot-text-title">Stay Connected</h5>
           <ul class="white-text">
             <li><i class="material-icons">phone</i> (63) (049) 536-0014</li>
@@ -86,33 +107,39 @@ Innovation and Technology Center.</p>
             <li><i class="material-icons">web</i> http://www.pcaarrd.dost.gov.ph</li>
             <li><i class="material-icons">location_on</i> DOST-PCAARRD, Los Baños, Laguna</li>
           </ul>
+
         </div>
 
-        <div class="col l3 s12">
+        <div class="col l2 s12 right-align">
           <h5 class="white-text foot-text-title">Get Involved</h5>
-          <a class="white-text" href="https://www.facebook.com/PCAARRD"><img src="./../images/fb.png" width="40"></a>
-          <a class="white-text" href="https://www.twitter.com/dostpcaarrd"><img src="./../images/twitter.png" width="40"></a>
-          <a class="white-text" href="https://www.youtube.com/channel/UCcrb__kJo7NCYYlbjwAGVwA"><img src="./../images/youtube.png" width="40"></a>
-    </div>
+          <a class="white-text" href="https://www.facebook.com/PCAARRD"><img src="./../images/facebook-icon.png" width="40"></a>
+          <a class="white-text" href="https://www.twitter.com/dostpcaarrd"><img src="./../images/twitter-icon.png" width="40"></a>
+          <a class="white-text" href="https://www.youtube.com/channel/UCcrb__kJo7NCYYlbjwAGVwA"><img src="./../images/youtube-icon.png" width="40"></a>
+        </div>  
       </div>
     </div>
-    <div class="footer-copyright">
-      <div class="container">
-      Made by <a class="brown-text text-lighten-3" href="#!">Elei</a>
-      </div>
-    </div>
+    
   </footer>
 
 
-  <!--  Scripts-->
-  <script src="bower_components/angular/angular.js"></script>
-  <script src="bower_components/angular/angular.min.js"></script>
-  <script src="bower_components/angular-route/angular-route.min.js"></script>
-  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <script src="assets/resources/js/materialize.js"></script>
-  <script src="assets/resources/js/init.js"></script>
-  <script src="app.js"></script>
+  <!-- Scripts -->
+  <!-- Bower Components -->
 
+  <script src="bower_components/angular/angular.min.js"></script>
+  <script src="/bower_components/angular-aria/angular-aria.min.js"></script>
+  <script src="/bower_components/angular-animate/angular-animate.min.js"></script>
+  <script src="/bower_components/angular-material/angular-material.min.js"></script>
+  <script src="bower_components/angular-route/angular-route.min.js"></script>
+  <script src="bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="bower_components/Materialize/dist/js/materialize.min.js"></script>
+  
+
+  
+  <!-- <script src="assets/resources/js/materialize.js"></script>
+  <script src="assets/resources/js/init.js"></script> -->
+  
+  <!-- Main JS -->
+  <script src="app.js"></script>
 
   <!-- Services -->
   <script src="services/category.service.js"></script>
