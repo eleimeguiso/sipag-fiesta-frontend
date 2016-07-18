@@ -21,16 +21,6 @@
     "url": "https://github.com/mightybulacs/sipag-fiesta/issues"
   },
   "dependencies": {
-    "anytv-node-cors": "0.0.7",
-    "anytv-node-error-handler": "0.0.10",
-    "anytv-node-importer": "0.0.0",
-    "anytv-node-mysql": "0.0.48",
-    "body-parser": "~1.15.2",
-    "compression": "^1.6.2",
-    "express": "~4.14.0",
-    "lodash": "~4.13.1",
-    "method-override": "^2.3.6",
-    "path": "~0.12.7",
-    "winston": "~2.2.0"
+    "express": "~4.14.0"
   }
 }
