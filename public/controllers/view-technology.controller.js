@@ -3,7 +3,20 @@
 (function(){
     angular
         .module("app")
-        .controller("ViewTechnologyCtrl", function($scope, $routeParams, TechnologyService, ObjectiveService, BenefitService, BeneficiaryService, LocationService, PartnerService, ImageService) { 
+        .controller("ViewTechnologyCtrl", function($scope, $routeParams, CommodityService, TechnologyService, ObjectiveService, BenefitService, BeneficiaryService, LocationService, PartnerService, ImageService) { 
+            $scope.commodities = [];
+            $scope.technologies = [];
+
+            CommodityService.getCommodities()
+              .then(function(data){
+                $scope.commodities = data.data.items;
+              });
+
+            TechnologyService.getTechnologies()
+              .then(function(data){
+                $scope.technologies = data.data.items;
+              });
+
             $scope.currentTechnology = $routeParams.id;
             $scope.objectives = [];
             $scope.benefits = [];

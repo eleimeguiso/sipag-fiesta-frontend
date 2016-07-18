@@ -1,58 +1,98 @@
+<div class="parallax-container" style="width:100%">
+  <div class="parallax">
+    <img src="/../images/crops-banner.jpg">
+  </div>
+</div>
 
+<div class="container">
+  
+  <div class="row" >
+  <!-- table of contents -->
+    <div class="col s3">
+      <ul class="collapsible" data-collapsible="accordion" ng-repeat="commodity in commodities | orderBy:'name'" ng-model="cat" ng-init="com = commodity.name">
+        <li>
+          <div class="collapsible-header">
+            <i class="material-icons">description</i>
+            {{commodity.name}}
+          </div>
+          <div class="collapsible-body">
+            <ul class="collection" ng-repeat="technology in technologies | filter: com">
+              <li class="collection-item">
+                <a href="/#/technologies/{{technology.technology_id}}">{{technology.title}}</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </div>
 
-<h1>TITLE: {{technology.title}}</h1>
-<hr/>
-<h4>DESCRIPTION</h4>
-<p>
-  {{technology.description}}  
-</p>
+  <!-- technology content -->
+    <div class="col s9">
+      <div class="row">
+        <div class="col s6">
+          <h4>{{technology.title}}</h4>
+          
+          <p>{{technology.description}}</p>
+          
+          <h5>OBJECTIVES</h5>
+          <p>
+            {{technology.objective_intro}}
+            <ul ng-repeat="objective in objectives">
+              {{objective.objective}}
+            </ul>  
+          </p>
 
-<hr/>
-<h4>OBJECTIVES</h4>
-<p>
-  {{technology.objective_intro}}
-  <ul ng-repeat="objective in objectives">
-    {{objective.objective}}
-  </ul>  
-</p>
+          <h5>BENEFITS</h5>
+          <ul ng-repeat="benefit in benefits">
+            <li>
+              {{benefit.benefit}}
+            </li>
+          </ul>
+        </div>
 
-<hr/>
-<h4>BENEFITS</h4>
-<ul ng-repeat="benefit in benefits">
-  <li>
-    {{benefit.benefit}}
-  </li>
-</ul>
+        <!-- image carousel -->
+        <div class="row">
+          <div class="col s3">
+            <div class="carousel" ng-repeat="image in images">
+              <a class="carousel-item"><img class="materialboxed" ng-src="{{image.image}}" width="300px"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+        
+      <div class="row">
 
-<hr/>
-<h4>BENEFICIARIES</h4>
-<ul ng-repeat="beneficiary in beneficiaries">
-  <li>
-    {{beneficiary.beneficiary}}
-  </li>
-</ul>
+        <div class="col s4">
+          <h5>TARGET BENEFICIARIES</h5>
+          <ul ng-repeat="beneficiary in beneficiaries">
+            <li>
+              {{beneficiary.beneficiary}}
+            </li>
+          </ul>
+        </div>
 
-<hr/>
-<h4>LOCATIONS</h4>
-<ul ng-repeat="location in locations">
-  <li>
-    {{location.location}}
-  </li>
-</ul>
+        <div class="col s4">
+          <h4>LOCATIONS</h4>
+          <ul ng-repeat="location in locations">
+            <li>
+              {{location.location}}
+            </li>
+          </ul>
+        </div>
 
-<hr/>
-<h4>PARTNERS</h4>
-<ul ng-repeat="partner in partners">
-  <li>
-    {{partner.partner}}
-  </li>
-</ul>
+        <div class="col s4">
+          <h4>PARTNER INSTITUTIONS</h4>
+          <ul ng-repeat="partner in partners">
+            <li>
+              {{partner.partner}}
+            </li>
+          </ul>
+        </div>
 
-<hr/>
-<h4>IMAGES</h4>
-<ul ng-repeat="image in images">
-  <li>
-    <img ng-src="{{image.image}}">
-  </li>
-</ul>
+      </div>
+        
+    </div>
 
+  </div>
+
+</div>
