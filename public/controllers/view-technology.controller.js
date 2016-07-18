@@ -7,6 +7,12 @@
             $scope.commodities = [];
             $scope.technologies = [];
 
+            $(document).ready(function(){
+              $('.collapsible').collapsible({
+                accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
+              });
+            });
+
             CommodityService.getCommodities()
               .then(function(data){
                 $scope.commodities = data.data.items;
@@ -15,6 +21,7 @@
             TechnologyService.getTechnologies()
               .then(function(data){
                 $scope.technologies = data.data.items;
+                console.log($scope.technologies);
               });
 
             $scope.currentTechnology = $routeParams.id;

@@ -5,13 +5,13 @@
 </div>
 
 <div class="container">
-  
+  <br>
   <div class="row" >
   <!-- table of contents -->
     <div class="col s3">
-      <ul class="collapsible" data-collapsible="accordion" ng-repeat="commodity in commodities | orderBy:'name'" ng-model="cat" ng-init="com = commodity.name">
+      <ul class="collapsible" data-collapsible="accordion" >
         <li>
-          <div class="collapsible-header">
+          <div class="collapsible-header" ng-repeat="commodity in commodities | orderBy:'name'" ng-model="cat" ng-init="com = commodity.name">
             <i class="material-icons">description</i>
             {{commodity.name}}
           </div>
