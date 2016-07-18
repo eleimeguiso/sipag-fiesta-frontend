@@ -1,0 +1,13 @@
+<h2>VIEW ALL CATEGORIES</h2>
+<ul ng-repeat="category in categories" ng-model="cat" ng-init="cat = category.name">
+  <li>
+    <a href="/#/{{category.name}}/commodities"><h4>{{category.name}}</h4></a><hr/>
+    <!-- <img ng-src="{{category.thumbnail}}" alt="{{category.name}}"> -->
+    <ul ng-repeat="commodity in commodities | filter: cat">
+      <li>
+        <a href="/#/commodity/{{commodity.name}}/technologies"><h6>{{commodity.name}}</h6></a>  
+      </li>
+    </ul>
+    <hr/>
+  </li>
+</ul>

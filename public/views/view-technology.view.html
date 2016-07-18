@@ -1,0 +1,58 @@
+
+
+<h1>TITLE: {{technology.title}}</h1>
+<hr/>
+<h4>DESCRIPTION</h4>
+<p>
+  {{technology.description}}  
+</p>
+
+<hr/>
+<h4>OBJECTIVES</h4>
+<p>
+  {{technology.objective_intro}}
+  <ul ng-repeat="objective in objectives">
+    {{objective.objective}}
+  </ul>  
+</p>
+
+<hr/>
+<h4>BENEFITS</h4>
+<ul ng-repeat="benefit in benefits">
+  <li>
+    {{benefit.benefit}}
+  </li>
+</ul>
+
+<hr/>
+<h4>BENEFICIARIES</h4>
+<ul ng-repeat="beneficiary in beneficiaries">
+  <li>
+    {{beneficiary.beneficiary}}
+  </li>
+</ul>
+
+<hr/>
+<h4>LOCATIONS</h4>
+<ul ng-repeat="location in locations">
+  <li>
+    {{location.location}}
+  </li>
+</ul>
+
+<hr/>
+<h4>PARTNERS</h4>
+<ul ng-repeat="partner in partners">
+  <li>
+    {{partner.partner}}
+  </li>
+</ul>
+
+<hr/>
+<h4>IMAGES</h4>
+<ul ng-repeat="image in images">
+  <li>
+    <img ng-src="{{image.image}}">
+  </li>
+</ul>
+
