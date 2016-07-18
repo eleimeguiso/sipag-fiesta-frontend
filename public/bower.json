@@ -1,0 +1,23 @@
+{
+  "name": "public",
+  "homepage": "https://github.com/eleimeguiso/sipag-fiesta-frontend",
+  "authors": [
+    "aacarrasco <aacarrasco@up.edu.ph>"
+  ],
+  "description": "sipag-fiesta-frontend",
+  "main": "app.js",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-route": "~1.4.7",
+    "bootstrap": "~3.3.5",
+    "angular": "angularjs#~1.4.7",
+    "jquery": "~2.1.4"
+  }
+}
