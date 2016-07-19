@@ -1,8 +1,8 @@
 <div class="container">
   <br><br>
   <h3>{{currentCommodity}}</h3>
-  <div class="row center" >
-    <ul ng-repeat="technology in technologiesPerCommodity">
+  <div class="row left-align" >
+    <ul ng-repeat="technology in technologiesPerCommodity | orderBy: 'title'">
       <li>
         <a href="/#/technologies/{{technology.technology_id}}">
           <h5>{{technology.title}}</h5>
