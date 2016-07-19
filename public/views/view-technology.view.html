@@ -1,7 +1,5 @@
-<div class="parallax-container" style="width:100%">
-  <div class="parallax">
-    <img src="/../images/crops-banner.jpg">
-  </div>
+<div class="parallax-container">
+  <img src="/../images/crops-banner.jpg" height="400px"  style="width:100%">
 </div>
 
 <div class="container">
@@ -29,7 +27,7 @@
   <!-- technology content -->
     <div class="col s9">
       <div class="row">
-        <div class="col s6">
+        <div class="col s8">
           <h4>{{technology.title}}</h4>
           
           <p>{{technology.description}}</p>
@@ -45,7 +43,7 @@
           <h5>BENEFITS</h5>
           <ul ng-repeat="benefit in benefits">
             <li>
-              {{benefit.benefit}}
+              <i class="material-icons">check_circle</i>{{benefit.benefit}}
             </li>
           </ul>
         </div>
@@ -53,8 +51,8 @@
         <!-- image carousel -->
         <div class="row">
           <div class="col s3">
-            <div class="carousel" ng-repeat="image in images">
-              <a class="carousel-item"><img class="materialboxed" ng-src="{{image.image}}" width="300px"></a>
+            <div class="container" ng-repeat="image in images">
+              <img class="materialboxed" ng-src="{{image.image}}" height="200px" width="200px">
             </div>
           </div>
         </div>
@@ -66,7 +64,7 @@
           <h5>TARGET BENEFICIARIES</h5>
           <ul ng-repeat="beneficiary in beneficiaries">
             <li>
-              {{beneficiary.beneficiary}}
+              <i class="material-icons">face</i>{{beneficiary.beneficiary}}
             </li>
           </ul>
         </div>
@@ -75,7 +73,7 @@
           <h4>LOCATIONS</h4>
           <ul ng-repeat="location in locations">
             <li>
-              {{location.location}}
+              <i class="material-icons">room</i>{{location.location}}
             </li>
           </ul>
         </div>
@@ -84,7 +82,7 @@
           <h4>PARTNER INSTITUTIONS</h4>
           <ul ng-repeat="partner in partners">
             <li>
-              {{partner.partner}}
+              <i class="material-icons">person_pin</i>{{partner.partner}}
             </li>
           </ul>
         </div>
