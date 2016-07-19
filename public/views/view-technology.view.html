@@ -1,96 +1,108 @@
-<div class="parallax-container">
-  <img src="/../images/crops-banner.jpg" height="400px"  style="width:100%">
-</div>
 
-<div class="container">
-  <br>
-  <div class="row" >
-  <!-- table of contents -->
-    <div class="col s3">
-      <ul class="collapsible" data-collapsible="accordion" >
-        <li>
-          <div class="collapsible-header" ng-repeat="commodity in commodities | orderBy:'name'" ng-model="cat" ng-init="com = commodity.name">
-            <i class="material-icons">description</i>
-            {{commodity.name}}
-          </div>
-          <div class="collapsible-body">
-            <ul class="collection" ng-repeat="technology in technologies | filter: com">
-              <li class="collection-item">
-                <a href="/#/technologies/{{technology.technology_id}}">{{technology.title}}</a>
+<main>
+  <div class="parallax-container">
+    <img src="/../images/crops-banner.jpg" height="400px"  style="width:85%">
+  </div>
+
+  <div>
+    <br>
+    <div class="row" >
+    <!-- table of contents -->
+        <ul id="slide-out" class="side-nav fixed">
+          <li>
+            <div class="collapsible-header" ng-repeat="commodity in commodities | orderBy:'name'" ng-model="cat" ng-init="com = commodity.name">
+              <a href="/#/technologies/{{technology.technology_id}}">{{commodity.name}}</a>
+            </div>
+          </li>
+        </ul>
+        <a href="#" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+
+      <!-- <div class="col s3">
+        <ul class="collapsible" data-collapsible="accordion" >
+          <li>
+            <div class="collapsible-header" ng-repeat="commodity in commodities | orderBy:'name'" ng-model="cat" ng-init="com = commodity.name">
+              <i class="material-icons">description</i>
+              {{commodity.name}}
+            </div>
+            <div class="collapsible-body">
+              <ul class="collection" ng-repeat="technology in technologies | filter: com">
+                <li class="collection-item">
+                  <a href="/#/technologies/{{technology.technology_id}}">{{technology.title}}</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div> -->
+
+    <!-- technology content -->
+      <div class="col s12">
+        <div class="row">
+          <div class="col s8">
+            <h4>{{technology.title}}</h4>
+            
+            <p>{{technology.description}}</p>
+            
+            <h5>OBJECTIVES</h5>
+            <p>
+              {{technology.objective_intro}}
+              <ul ng-repeat="objective in objectives">
+                {{objective.objective}}
+              </ul>  
+            </p>
+
+            <h5>BENEFITS</h5>
+            <ul ng-repeat="benefit in benefits">
+              <li>
+                <i class="material-icons">check_circle</i>{{benefit.benefit}}
               </li>
             </ul>
           </div>
-        </li>
-      </ul>
-    </div>
 
-  <!-- technology content -->
-    <div class="col s9">
-      <div class="row">
-        <div class="col s8">
-          <h4>{{technology.title}}</h4>
-          
-          <p>{{technology.description}}</p>
-          
-          <h5>OBJECTIVES</h5>
-          <p>
-            {{technology.objective_intro}}
-            <ul ng-repeat="objective in objectives">
-              {{objective.objective}}
-            </ul>  
-          </p>
-
-          <h5>BENEFITS</h5>
-          <ul ng-repeat="benefit in benefits">
-            <li>
-              <i class="material-icons">check_circle</i>{{benefit.benefit}}
-            </li>
-          </ul>
-        </div>
-
-        <!-- image carousel -->
-        <div class="row">
-          <div class="col s3">
-            <div class="container" ng-repeat="image in images">
-              <img class="materialboxed" ng-src="{{image.image}}" height="200px" width="200px">
+          <!-- image carousel -->
+          <div class="row">
+            <div class="col s3">
+              <div class="container" ng-repeat="image in images">
+                <img class="materialboxed" ng-src="{{image.image}}" height="200px" width="200px">
+              </div>
             </div>
           </div>
         </div>
+          
+        <div class="row">
+
+          <div class="col s4">
+            <h5>TARGET BENEFICIARIES</h5>
+            <ul ng-repeat="beneficiary in beneficiaries">
+              <li>
+                <i class="material-icons">face</i>{{beneficiary.beneficiary}}
+              </li>
+            </ul>
+          </div>
+
+          <div class="col s3">
+            <h5>LOCATIONS</h5>
+            <ul ng-repeat="location in locations">
+              <li>
+                <i class="material-icons">room</i>{{location.location}}
+              </li>
+            </ul>
+          </div>
+
+          <div class="col s4">
+            <h5>PARTNER INSTITUTIONS</h5>
+            <ul ng-repeat="partner in partners">
+              <li>
+                <i class="material-icons">person_pin</i>{{partner.partner}}
+              </li>
+            </ul>
+          </div>
+
+        </div>
+          
       </div>
-        
-      <div class="row">
 
-        <div class="col s4">
-          <h5>TARGET BENEFICIARIES</h5>
-          <ul ng-repeat="beneficiary in beneficiaries">
-            <li>
-              <i class="material-icons">face</i>{{beneficiary.beneficiary}}
-            </li>
-          </ul>
-        </div>
-
-        <div class="col s4">
-          <h4>LOCATIONS</h4>
-          <ul ng-repeat="location in locations">
-            <li>
-              <i class="material-icons">room</i>{{location.location}}
-            </li>
-          </ul>
-        </div>
-
-        <div class="col s4">
-          <h4>PARTNER INSTITUTIONS</h4>
-          <ul ng-repeat="partner in partners">
-            <li>
-              <i class="material-icons">person_pin</i>{{partner.partner}}
-            </li>
-          </ul>
-        </div>
-
-      </div>
-        
     </div>
 
   </div>
-
-</div>
+</main>
