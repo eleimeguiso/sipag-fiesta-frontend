@@ -7,6 +7,10 @@
             $scope.categories = [];
             $scope.commodities = [];
 
+            $(document).ready(function(){
+              $('.slider').slider({full_width: true});
+            });
+
             CategoryService.getCategories()
               .then(function(categories) {
                 $scope.categories = categories.data.items;
