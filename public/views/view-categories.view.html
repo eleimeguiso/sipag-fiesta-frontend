@@ -1,31 +1,35 @@
 <div class="slider">
   <ul class="slides">
     <li>
-      <img src="./../images/aqua-banner.jpg"> <!-- random image -->
+      <img src="./../images/aquatic-header.png"> <!-- random image -->
       <div class="caption center-align">
         <h3>This is our big Tagline!</h3>
-        <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+        <h4 class="light grey-text text-lighten-2">Here's our small slogan.</h4>
+        <h5 class="light grey-text text-lighten-4">This is a 3-level header.</h5>
       </div>
     </li>
     <li>
-      <img src="./../images/corn-banner.jpg"> <!-- random image -->
+      <img src="./../images/crops-header.png"> <!-- random image -->
       <div class="caption left-align">
         <h3>Left Aligned Caption</h3>
-        <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+        <h4 class="light grey-text text-lighten-2">Here's our small slogan.</h4>
+        <h5 class="light grey-text text-lighten-4">This is a 3-level header.</h5>
       </div>
     </li>
     <li>
-      <img src="./../images/bamboo-banner.jpg"> <!-- random image -->
+      <img src="./../images/forest-header.jpg"> <!-- random image -->
       <div class="caption right-align">
         <h3>Right Aligned Caption</h3>
-        <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+        <h4 class="light grey-text text-lighten-2">Here's our small slogan.</h4>
+        <h5 class="light grey-text text-lighten-4">This is a 3-level header.</h5>
       </div>
     </li>
     <li>
-      <img src="./../images/livestock-banner.jpg"> <!-- random image -->
+      <img src="./../images/livestock-header.png"> <!-- random image -->
       <div class="caption center-align">
         <h3>This is our big Tagline!</h3>
-        <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+        <h4 class="light grey-text text-lighten-2">Here's our small slogan.</h4>
+        <h5 class="light grey-text text-lighten-4">This is a 3-level header.</h5>
       </div>
     </li>
   </ul>
@@ -36,9 +40,12 @@
   <div class="row center" >
     <div class="col s12 m3" ng-repeat="category in categories" ng-model="cat" ng-init="cat = category.name">
       <img ng-src="{{category.thumbnail}}" width="100"><br>
-      <a href="/#/{{category.name}}/commodities"><h3>{{category.name}}</h3></a><br>
-      <div class="collection" ng-repeat="commodity in commodities | filter: cat">
-        <a href="/#/commodity/{{commodity.name}}/technologies" class="collection-item">{{commodity.name}}</a>
+      <a href="/#/{{category.name}}/commodities"><h5 class="black-text">{{category.name}}</h5></a><br>
+      <div class="collection" ng-repeat="commodity in commodities | filter: cat" ng-init="com = commodity.name">
+        {{commodity.name}}
+        <div ng-repeat="technology in technologies | filter: com">
+          <a href="/#/technologies/{{technology.technology_id}}" class="collection-item">{{technology.title}}</a>
+        </div>
       </div>
     </div>
   </div>

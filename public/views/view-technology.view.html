@@ -1,40 +1,34 @@
 
 <main>
   <div class="parallax-container">
-    <img src="/../images/crops-banner.jpg" height="400px"  style="width:85%">
+    <img src="/../images/header.png" height="400px"  style="width:85%">
   </div>
 
   <div>
     <br>
     <div class="row" >
-    <!-- table of contents -->
-        <ul id="slide-out" class="side-nav fixed">
-          <li>
-            <div class="collapsible-header" ng-repeat="commodity in commodities | orderBy:'name'" ng-model="cat" ng-init="com = commodity.name">
-              <a href="/#/technologies/{{technology.technology_id}}">{{commodity.name}}</a>
-            </div>
-          </li>
-        </ul>
-        <a href="#" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
 
-      <!-- <div class="col s3">
-        <ul class="collapsible" data-collapsible="accordion" >
-          <li>
-            <div class="collapsible-header" ng-repeat="commodity in commodities | orderBy:'name'" ng-model="cat" ng-init="com = commodity.name">
-              <i class="material-icons">description</i>
-              {{commodity.name}}
-            </div>
-            <div class="collapsible-body">
-              <ul class="collection" ng-repeat="technology in technologies | filter: com">
-                <li class="collection-item">
-                  <a href="/#/technologies/{{technology.technology_id}}">{{technology.title}}</a>
-                </li>
-              </ul>
-            </div>
-          </li>
-        </ul>
-      </div> -->
-
+      <div id="slide-out" class="side-nav almost-black white-text fixed">
+        <div class="collection black-text">
+          <ul class="collapsible almost-black" data-collapsible="accordion">
+            <li ng-repeat="commodity in commodities | orderBy:'name'" ng-model="cat" ng-init="com = commodity.name" ng-class="{active: {{commodity.commodity_id}}==={{technology.commodity_id}}}">
+              <div class="collapsible-header recall-list collapsible popout" style="font-size:14px" ng-class="{active: {{commodity.commodity_id}}==={{technology.commodity_id}}}">
+                {{commodity.name}}
+              </div>
+              <div class="collapsible-body gray">
+                <div class="collection black" style="text-align:right;">
+                  <ul class="collection" ng-repeat="technology in technologies | filter: com">
+                    <li class="collection-item">
+                      <a href="/#/technologies/{{technology.technology_id}}" class="collection-item" style="font-size:14px" ng-class="{active: {{technology.technology_id}}==={{currentTechnology}}}">{{technology.title}}</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    <br>
     <!-- technology content -->
       <div class="col s12">
         <div class="row">
@@ -59,11 +53,10 @@
             </ul>
           </div>
 
-          <!-- image carousel -->
           <div class="row">
             <div class="col s3">
-              <div class="container" ng-repeat="image in images">
-                <img class="materialboxed" ng-src="{{image.image}}" height="200px" width="200px">
+              <div class="container" ng-repeat="image in images" mat-box>
+                <img class="materialboxed responsive-img" ng-src="{{image.image}}" height="200px" width="200px">
               </div>
             </div>
           </div>
