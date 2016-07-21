@@ -8,10 +8,11 @@
             $scope.technologiesPerCommodity = [];       
             $scope.currentCommodity = $routeParams.commodity;
            
-
             TechnologyService.getTechnologiesPerCommodity($scope.currentCommodity)
               .then(function(data) {
                 $scope.technologiesPerCommodity = data.data.items;
+                $scope.firstTechInCommodity = data.data.items[0];
+                console.log($scope.firstTechInCommodity);
               });
 
 
@@ -21,6 +22,8 @@
             TechnologyService.getTechnologiesPerCategory($scope.currentCategory)
               .then(function(data) {
                 $scope.technologiesPerCategory = data.data.items;
+                $scope.firstTechInCategory = data.data.items[0];
+                console.log($scope.firstTechInCategory);
               });
 
         });

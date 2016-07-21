@@ -3,9 +3,10 @@
 (function(){
     angular
         .module("app")
-        .controller("ViewCategoriesCtrl", function($scope, CategoryService, CommodityService) {
+        .controller("ViewCategoriesCtrl", function($scope, CategoryService, CommodityService, TechnologyService) {
             $scope.categories = [];
             $scope.commodities = [];
+            $scope.technologies = [];
 
             $(document).ready(function(){
               $('.slider').slider({full_width: true});
@@ -19,6 +20,13 @@
             CommodityService.getCommodities()
               .then(function(commodities) {
                 $scope.commodities = commodities.data.items;
+              });
+
+
+
+            TechnologyService.getTechnologies()
+              .then(function(technologies) {
+                $scope.technologies = technologies.data.items;
               });
 
         });

@@ -8,10 +8,6 @@
             $scope.technologies = [];
 
             $(document).ready(function(){
-              $('.collapsible').collapsible({
-                accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
-              });
-              $('.materialboxed').materialbox();
               $(".button-collapse").sideNav();
             });
 
@@ -23,7 +19,6 @@
             TechnologyService.getTechnologies()
               .then(function(data){
                 $scope.technologies = data.data.items;
-                console.log($scope.technologies);
               });
 
             $scope.currentTechnology = $routeParams.id;
@@ -69,6 +64,26 @@
                 $scope.images = data.data.items;
               });
 
+        })
+        .directive('matBox', function() {
+          return {
+            // Restrict it to be an attribute in this case
+            restrict: 'A',
+            // responsible for registering DOM listeners as well as updating the DOM
+            link: function() {
+                $('.materialboxed').materialbox();
+                $('.collapsible').collapsible({
+                  accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
+                });
+                $("div.HeaderPanel").toggle(
+                function() {
+                    $(this).next("div.ContentPanel").show("slow");
+                },
+                function() {
+                    $(this).next("div.ContentPanel").hide("slow");
+                });
+            }
+           };
         });
 
 })();
