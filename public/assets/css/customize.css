@@ -6,6 +6,46 @@
  * Made By MaterializeCSS.com
  */
 
+.side-nav .collapsible-header, .side-nav.fixed .collapsible-header {
+    background-color: transparent;
+    border: none;
+    line-height: normal;
+    height: inherit;
+    padding: 0 30px;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.collection a.collection-item {
+    display: block;
+    transition: .25s;
+    color: green;
+}
+
+.collection .collection-item.active {
+    background-color: green;
+    color: #eafaf9;
+}
+
+.side-nav .collapsible-header:hover,
+.side-nav.fixed .collapsible-header:hover {
+  background-color: #aaa;
+}
+
+header, main {
+  padding-left: 240px;
+}
+
+@media only screen and (max-width : 992px) {
+  header, main, footer {
+    padding-left: 0;
+  }
+}
+
 nav ul a,
 nav .brand-logo {
   color: #444;
